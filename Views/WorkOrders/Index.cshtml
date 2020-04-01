@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CleanTrackerV18.Models.CleanTracker.WorkOrders>
+
+@{
+        ViewData["Title"] = "Index";
+
+
+    //private CleanTrackerEntites db = CleanTrackerEntites();
+}
+
+<h1>Work Orders List</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderCompletionStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkOrderAssign)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.WorkOrderLastModified)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.WorkOrderLastModifiedBy)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.WorkOrderIsActive)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.Service)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderCompletionStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderAssign)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkOrderLastModified)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.WorkOrderLastModifiedBy)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.WorkOrderIsActive)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Service.ServiceType)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.Unit.UnitName)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.User.UserFirstName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.WorkOrderId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.WorkOrderId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.WorkOrderId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

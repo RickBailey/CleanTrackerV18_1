@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CleanTrackerV18.Models.CleanTracker.Services>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServicePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceCost)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.ServiceLastModified)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.ServiceLastModifiedBy)
+            </th>
+            <th hidden>
+                @Html.DisplayNameFor(model => model.ServiceIsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServicePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceCost)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.ServiceLastModified)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.ServiceLastModifiedBy)
+            </td>
+            <td hidden>
+                @Html.DisplayFor(modelItem => item.ServiceIsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ServiceId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ServiceId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ServiceId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

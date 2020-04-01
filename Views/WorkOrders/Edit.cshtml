@@ -1,0 +1,85 @@
+﻿@model CleanTrackerV18.Models.CleanTracker.WorkOrders
+
+@{
+    ViewData["Title"] = "Edit";
+    //private CleanTrackerEntites db = CleanTrackerEntites();
+}
+
+<h1>Edit</h1>
+
+<h4>WorkOrders</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input hidden asp-for="WorkOrderId" />
+            <div class="form-group">
+                <label hidden asp-for="UserId" class="control-label"></label>
+                <select hidden asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="UnitId" class="control-label"></label>
+                <select hidden asp-for="UnitId" class="form-control" asp-items="ViewBag.UnitId"></select>
+                <span asp-validation-for="UnitId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="ServiceId" class="control-label"></label>
+                <select hidden asp-for="ServiceId" class="form-control" asp-items="ViewBag.ServiceId"></select>
+                <span asp-validation-for="ServiceId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="WorkOrderNumber" class="control-label"></label>
+                <input hidden asp-for="WorkOrderNumber" class="form-control" />
+                <span asp-validation-for="WorkOrderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrderName" class="control-label"></label>
+                <input asp-for="WorkOrderName" class="form-control" />
+                <span asp-validation-for="WorkOrderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrderServiceType" class="control-label"></label>
+                <input asp-for="WorkOrderServiceType" class="form-control" />
+                <span asp-validation-for="WorkOrderServiceType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrderCompletionStatus" class="control-label"></label>
+                <input asp-for="WorkOrderCompletionStatus" class="form-control" />
+                <span asp-validation-for="WorkOrderCompletionStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WorkOrderAssign" class="control-label"></label>
+                <select multiple size= 10 asp-for="WorkOrderAssign" class="form-control"  asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="WorkOrderAssign" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="WorkOrderLastModified" class="control-label"></label>
+                <input hidden asp-for="WorkOrderLastModified" class="form-control" />
+                <span asp-validation-for="WorkOrderLastModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="WorkOrderLastModifiedBy" class="control-label"></label>
+                <input hidden asp-for="WorkOrderLastModifiedBy" class="form-control" />
+                <span asp-validation-for="WorkOrderLastModifiedBy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label hidden asp-for="WorkOrderIsActive" class="control-label"></label>
+                <input hidden asp-for="WorkOrderIsActive" class="form-control" />
+                <span asp-validation-for="WorkOrderIsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

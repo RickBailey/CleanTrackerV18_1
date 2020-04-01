@@ -1,0 +1,64 @@
+﻿@model CleanTrackerV18.Models.CleanTracker.Units
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Units</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input hidden asp-for="UnitId" />
+            <div class="form-group">
+                <label asp-for="UnitName" class="control-label"></label>
+                <input asp-for="UnitName" class="form-control" />
+                <span asp-validation-for="UnitName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitType" class="control-label"></label>
+                <input asp-for="UnitType" class="form-control" />
+                <span asp-validation-for="UnitType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitNeighborhood" class="control-label"></label>
+                <input asp-for="UnitNeighborhood" class="form-control" />
+                <span asp-validation-for="UnitNeighborhood" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitStatus" class="control-label"></label>
+                <input asp-for="UnitStatus" class="form-control" />
+                <span asp-validation-for="UnitStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitLastModified" class="control-label"></label>
+                <input asp-for="UnitLastModified" class="form-control" />
+                <span asp-validation-for="UnitLastModified" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="UnitLastModifiedBy" class="control-label"></label>
+                <input asp-for="UnitLastModifiedBy" class="form-control" />
+                <span asp-validation-for="UnitLastModifiedBy" class="text-danger"></span>
+            </div>
+            <div hidden class="form-group">
+                <label asp-for="UnitIsActive" class="control-label"></label>
+                <input asp-for="UnitIsActive" class="form-control" />
+                <span asp-validation-for="UnitIsActive" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

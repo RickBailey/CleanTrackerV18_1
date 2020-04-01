@@ -1,0 +1,60 @@
+﻿@model CleanTrackerV18.Models.CleanTracker.Units
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Units</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitNeighborhood)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitNeighborhood)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitLastModified)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitLastModified)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitLastModifiedBy)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitLastModifiedBy)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UnitIsActive)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.UnitIsActive)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.UnitId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

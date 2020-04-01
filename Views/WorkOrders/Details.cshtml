@@ -1,0 +1,84 @@
+﻿@model CleanTrackerV18.Models.CleanTracker.WorkOrders
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Work Orders</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderServiceType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderServiceType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderCompletionStatus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderCompletionStatus)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderAssign)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderAssign)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderLastModified)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderLastModified)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderLastModifiedBy)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderLastModifiedBy)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.WorkOrderIsActive)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.WorkOrderIsActive)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Service)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.Service.ServiceType)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.Unit.UnitName)
+        </dd>
+        <dt hidden class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.User)
+        </dt>
+        <dd hidden class = "col-sm-10">
+            @Html.DisplayFor(model => model.User.UserFirstName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.WorkOrderId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
